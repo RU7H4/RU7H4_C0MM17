@@ -27,6 +27,10 @@ github_user = input("Enter your GitHub username: ")
 github_token = getpass.getpass("Enter your GitHub personal access token: ")
 repo_name = input("Enter a name for the new private repository: ")
 days = int(input("Enter the number of days for fake commits: "))
+git_user_name = input("Enter your Git name: ")
+git_user_email = input("Enter your Git email: ")
+subprocess.run(["git", "config", "--global", "user.name", git_user_name])
+subprocess.run(["git", "config", "--global", "user.email", git_user_email])
 api_url = "https://api.github.com/user/repos"
 repo_data = {
     "name": repo_name,
